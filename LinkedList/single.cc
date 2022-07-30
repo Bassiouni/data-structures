@@ -44,12 +44,12 @@ public:
   ~LinkedList()
   {
     Node<T> *temp;
-    while (head)
+    while (this->head)
     {
-      temp = head->next;
-      std::cout << "deleting " << head->data << std::endl;
-      delete head;
-      head = temp;
+      temp = this->head->next;
+      std::cout << "deleting " << this->head->data << std::endl;
+      delete this->head;
+      this->head = temp;
     }
   }
 

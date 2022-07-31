@@ -74,6 +74,20 @@ public:
     }
   }
 
+  void reverse()
+  {
+    Node<T> *ptr = this->head->next;
+    this->head->next = nullptr;
+    Node<T> *temp;
+    while (ptr)
+    {
+      temp = ptr->next;
+      ptr->next = head;
+      this->head = ptr;
+      ptr = temp;
+    }
+  }
+
   ~LinkedList()
   {
     Node<T> *temp;

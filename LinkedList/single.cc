@@ -55,8 +55,9 @@ public:
 
     if (currptr->data == val)
     {
-      prevptr->next = currptr->next;
+      prevptr = currptr->next;
       delete currptr;
+      this->head = prevptr;
       return;
     }
     currptr = currptr->next;
@@ -99,6 +100,9 @@ int main()
   l.insert(4);
 
   l.remove(5); // Testing with non-existing values to check for Seg Faults.
+  l.printAll();
+
+  l.reverse();
   l.printAll();
 
   l.remove(1);
